@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PDF Translator</title>
+</head>
+<body>
+    <h1>PDF Translator</h1>
+    <form method="POST" action="/" enctype="multipart/form-data">
+        <label for="input_pdf">Upload a PDF:</label>
+        <input type="file" name="input_pdf" accept=".pdf">
+        <br>
+        <label for="target_language">Target Language:</label>
+        <input type="text" name="target_language" placeholder="e.g., 'es' for Spanish">
+        <br>
+        <input type="submit" value="Translate and View PDF">
+    </form>
+</body>
+</html>
