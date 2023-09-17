@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Text Translation</title>
+</head>
+<body>
+    <h1>Translate Text to Indian Languages</h1>
+    <form method="POST">
+        <textarea name="text" placeholder="Enter text to translate"></textarea><br>
+        
+        <!-- Select an Indian language for translation -->
+        <label for="language">Select a language:</label>
+        <select name="language" id="language">
+            <option value="hi">Hindi</option>
+            <option value="bn">Bengali</option>
+            <option value="te">Telugu</option>
+            <option value="mr">Marathi</option>
+            <option value="ta">Tamil</option>
+            <option value="gu">Gujarati</option>
+            <option value="kn">Kannada</option>
+            <option value="ur">Urdu</option>
+            <option value="ml">Malayalam</option>
+            <option value="pa">Punjabi</option>
+            <option value="or">Odia</option>
+            <option value="as">Assamese</option>
+            <option value="ma">Maithili</option>
+            <!-- Add more Indian languages here -->
+        </select><br>
+        
+        <input type="submit" value="Translate">
+    </form>
+    {% if translation %}
+    <h2>Translation:</h2>
+    <p>{{ translation }}</p>
+    {% endif %}
+    {% if error %}
+    <p style="color: red;">{{ error }}</p>
+    {% endif %}
+</body>
+</html>
