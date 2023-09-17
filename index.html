@@ -14,5 +14,18 @@
         <br>
         <input type="submit" value="Translate and View PDF">
     </form>
+    <script>
+       $.ajax({
+    type: "POST",
+    url: "/", // Use the root URL since the Flask route is "/"
+    data: { 
+        // Your form data here
+    },
+    success: function(response) {
+        // Handle the response from the Flask route
+    }
+});
+
+    </script>
 </body>
 </html>
