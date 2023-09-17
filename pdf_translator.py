@@ -5,7 +5,7 @@ from googletrans import Translator
 from flask import Flask, render_template, request, send_file
 from fpdf import FPDF
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='.')
 
 @app.route("/", methods=["GET", "POST"])
 def index():
