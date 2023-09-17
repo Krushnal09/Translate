@@ -7,7 +7,7 @@ from fpdf import FPDF
 
 app = Flask(__name__, template_folder='.')
 
-@app.route("/", methods=["POST"])
+@app.route("/", methods=["GET", "POST"])
 def index():
     if request.method == "POST":
         input_pdf = request.files["input_pdf"]
