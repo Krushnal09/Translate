@@ -2,7 +2,7 @@ from flask import Flask, render_template, request
 from googletrans import Translator
 
 app = Flask(__name__)
-
+app.template_folder= 'templates'
 def translate_text(text, target_language):
     translator = Translator()
     translated_text = translator.translate(text, src='en', dest=target_language)

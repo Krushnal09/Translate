@@ -1,40 +1,131 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Text Translation</title>
+    <link href="/software/templates/css/style.css/" rel="stylesheet" type="text/css"/>
 </head>
+
 <body>
-    <h1>Translate Text to Indian Languages</h1>
-    <form method="POST">
-        <textarea name="text" placeholder="Enter text to translate"></textarea><br>
-        
-        <!-- Select an Indian language for translation -->
-        <label for="language">Select a language:</label>
-        <select name="language" id="language">
-            <option value="hi">Hindi</option>
-            <option value="bn">Bengali</option>
-            <option value="te">Telugu</option>
-            <option value="mr">Marathi</option>
-            <option value="ta">Tamil</option>
-            <option value="gu">Gujarati</option>
-            <option value="kn">Kannada</option>
-            <option value="ur">Urdu</option>
-            <option value="ml">Malayalam</option>
-            <option value="pa">Punjabi</option>
-            <option value="or">Odia</option>
-            <option value="as">Assamese</option>
-            <option value="ma">Maithili</option>
-            <!-- Add more Indian languages here -->
-        </select><br>
-        
-        <input type="submit" value="Translate">
-    </form>
-    {% if translation %}
-    <h2>Translation:</h2>
-    <p>{{ translation }}</p>
-    {% endif %}
-    {% if error %}
-    <p style="color: red;">{{ error }}</p>
-    {% endif %}
+    <style>
+       * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}  
+body {
+   
+    font-family: 'Times New Roman', Times, serif;
+     display: flex; 
+    justify-content: center;
+    /* align-items: center; */
+    min-height: 150vh;
+    background: linear-gradient(#fee140 -14%,#ff512f 40%, #dd2476 127%);
+}
+.main{
+    position: absolute;
+    height: 100%;
+    width: 50%;
+}
+.heading{
+
+    width: 100%;
+    margin: 20px;
+}
+.form{
+    background-color: #d7579a;
+    height: auto;
+    position: relative;
+    margin-top: 10px;
+    padding: 25px;
+    margin: 10px;
+    border-radius: 20px;
+    border: 2px solid white;
+    box-shadow: 6px 5px 10px 1px black;
+}
+.form textarea{
+    min-width: 50px;
+    width: auto;
+    min-height: 100px;
+    border-radius: 7px;
+    padding: 15px;
+    font-size: 16px;
+    font-family: cursive;
+}
+.form select{
+    width:100px;
+   
+}
+.result{
+    position: relative;
+    height: auto;
+    min-height: 100px;
+    width: auto;
+    min-width: 100px;
+    background-color: white;
+    min-width: 20px;
+    margin: 20px;
+    top: 29px;
+    border-radius: 12px;
+    padding: 10px;
+    box-shadow: 6px 5px 10px 1px black;
+    font-size: 20px;
+}
+.trans-btn {
+    padding: 0.6em 2em;
+    border: none;
+    outline: none;
+    color: rgb(255, 255, 255);
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+  } 
+    </style>
+    <div class="main">
+        <div class="heading">
+            <h1>Translate Text to Indian Languages</h1>
+        </div> <br>
+        <div class="form">
+            <form method="POST">
+                <textarea name="text" placeholder="Enter text to translate"></textarea><br>
+
+                <!-- Select an Indian language for translation -->
+                <label for="language">Select a language:</label>
+                <select name="language" id="language">
+                    <option value="hi">Hindi</option>
+                    <option value="bn">Bengali</option>
+                    <option value="te">Telugu</option>
+                    <option value="mr">Marathi</option>
+                    <option value="ta">Tamil</option>
+                    <option value="gu">Gujarati</option>
+                    <option value="kn">Kannada</option>
+                    <option value="ur">Urdu</option>
+                    <option value="ml">Malayalam</option>
+                    <option value="pa">Punjabi</option>
+                    <option value="or">Odia</option>
+                    <option value="as">Assamese</option>
+                    <option value="ma">Maithili</option>
+                    <!-- Add more Indian languages here -->
+                </select><br>
+
+                <input class="trans-btn" type="submit" value="Translate">
+            </form>
+        </div>
+        <div class="result">
+            {% if translation %}
+            <h2>Translation:</h2>
+            <p>{{ translation }}</p>
+            {% endif %}
+            {% if error %}
+            <p style="color: red;">{{ error }}</p>
+            {% endif %}
+        </div>
+    </div>
 </body>
+
 </html>
